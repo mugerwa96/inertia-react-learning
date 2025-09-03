@@ -87,7 +87,7 @@ export default function Register() {
 
                         <div className="text-center text-sm text-muted-foreground">
                             Already have an account?{' '}
-                            <TextLink href={route('login')} tabIndex={6}>
+                            <TextLink href={route('login')} tabIndex={6} prefetch>
                                 Log in
                             </TextLink>
                         </div>

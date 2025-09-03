@@ -71,7 +71,7 @@ export default function Login({ status, canResetPassword }: LoginProps) {
 
                         <div className="text-center text-sm text-muted-foreground">
                             Don't have an account?{' '}
-                            <TextLink href={route('register')} tabIndex={5}>
+                            <TextLink href={route('register')} tabIndex={5} prefetch>
                                 Sign up
                             </TextLink>
                         </div>
