@@ -8,7 +8,7 @@ interface CustomTextAreaProps {
     placeholder?: string;
     required?: boolean;
     errors: { [key: string]: string };
-    
+defaultValue?:string
 }
 
 const CustomTextArea = ({
@@ -17,7 +17,7 @@ const CustomTextArea = ({
     placeholder,
     required = true,
     errors,
-    value
+    defaultValue
 
 }: CustomTextAreaProps) => {
     return (
@@ -36,6 +36,7 @@ const CustomTextArea = ({
                 required={required}
                 autoComplete={name}
                 name={name}
+                defaultValue={defaultValue}
                 placeholder={placeholder}
             />
             <InputError message={errors[name]} />

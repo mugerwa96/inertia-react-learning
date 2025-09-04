@@ -10,6 +10,7 @@ interface CustomInputProps {
     type?: string;
     placeholder?: string;
     required?: boolean;
+    defaultValue?:string
     errors: { [key: string]: string };
 }
 
@@ -19,7 +20,8 @@ const CustomInput = ({
     type = "text",
     placeholder,
     required = true,
-    errors
+    errors,
+    defaultValue
 
 }: CustomInputProps) => {
     return (
@@ -40,6 +42,7 @@ const CustomInput = ({
                 autoComplete={name}
                 name={name}
                 placeholder={placeholder}
+                defaultValue={defaultValue}
             />
             <InputError message={errors[name]} />
         </div>

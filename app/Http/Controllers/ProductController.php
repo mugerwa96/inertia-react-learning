@@ -23,7 +23,7 @@ class ProductController extends Controller
     {
         try {
             Product::create($request->validated());
-            return to_route('products.index')->with('message','Product added successfully');
+            return to_route('products.index')->with('message', 'Product added successfully');
         } catch (\Exception $th) {
             // throw $th;
         }
@@ -42,5 +42,15 @@ class ProductController extends Controller
     public function update(Request $request)
     {
         dd($request->all());
+    }
+    public function destroy($product)
+    {
+        try {
+            // dd($product);
+            Product::destroy($product);
+            return to_route('products.index')->with('message', 'Product deleted successfully');
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 }
